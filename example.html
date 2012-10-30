@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://raw.github.com/documentcloud/underscore/master/underscore.js"></script>
+        <script type="text/javascript" src="https://raw.github.com/documentcloud/backbone/master/backbone.js"></script>
+        <script type="text/javascript" src="https://raw.github.com/zynga/scroller/master/src/Animate.js"></script>
+        <script type="text/javascript" src="https://raw.github.com/zynga/scroller/master/src/Scroller.js"></script>
+        <script type="text/javascript" src="backbone.scrollable.js"></script>
+        <style>
+            .container {
+                position: relative;
+                height: 400px;
+                width: 300px;
+                overflow: hidden;
+                margin: 50px;
+            }
+            h2 {padding: 0; margin: 0}
+            ul {list-style: none}
+            li {display: block}
+            .sticky, .sticker {
+                height: 14px;
+                font-size: 13px;
+                font-weight: bold;
+                border-bottom: 1px solid #CCC;
+                background-color: #EEE;
+            }
+            .sticker {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <div class="body">
+            <div>
+                Some text can be here
+            </div>
+            <h2 class="sticky">Header 1</h2>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+            <h2 class="sticky">Header 2</h2>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+            <h2 class="sticky">Header 3</h2>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+            <h2 class="sticky">Header 4</h2>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+            <h2 class="sticky">Header 5</h2>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+            <h2 class="sticky">Header 6</h2>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+            <h2 class="sticky">Header 1</h2>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+        </div>
+        <div class="sticker"></div>
+    </div>
+<script type="text/javascript">
+    $(function() {
+        var View = Backbone.ScrollableView.extend({
+            el: $('.container'),
+            bodyEl: $('.body').get(0) // can be assigned inside of the View (e.g. at the .render())
+        });
+        (new View({
+            stickable: true
+        })).initScroller();
+    });
+</script>
+</body>
+</html>
